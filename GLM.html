@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+  /* Hide the image and retry button initially */
+  #scaryImage, #retryButton {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<h1>Scary game</h1>
+<button onclick="showImageAndRetry()">Play</button>
+
+<img id="scaryImage" src="https://static.partyking.org/fit-in/1300x0/products/original/hoppande-lostander-88744-3.jpg" alt="Scary Image">
+<button id="retryButton" onclick="hideImageAndRetry()">Retry</button>
+
+<script>
+  function showImageAndRetry() {
+    document.getElementById('scaryImage').style.display = 'block';
+    document.getElementById('retryButton').style.display = 'block';
+  }
+
+  function hideImageAndRetry() {
+    document.getElementById('scaryImage').style.display = 'none';
+    document.getElementById('retryButton').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
