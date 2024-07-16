@@ -3,83 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blurred Background Image with Overlay Example</title>
+    <title>GLM</title>
+    <link rel="icon" href="https://media.discordapp.net/attachments/1110565562616127620/1262785904775528569/thrtyjtykyukyu.png?ex=6697dc85&is=66968b05&hm=d6155ac448c2d3b29c1ec08351625bfcfcdefa3769d809362e9bb4059fa1a3ca&=&format=webp&quality=lossless" type="image/png">
     <style>
         body {
-            margin: 0; /* Removes default margin */
-            height: 100vh; /* Ensures the body covers the full viewport height */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            flex-direction: column;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: auto;
+            background-color: black; /* Temporary color to enhance contrast */
         }
         .background {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://media.discordapp.net/attachments/1110565562616127620/1262595682150252595/juykyulyuiili.jpg?ex=66972b5c&is=6695d9dc&hm=789fac28c137eec70079b5c15ae84a669c729fbb578d9b98c33af01bdc101099&=&format=webp&width=810&height=456');
-            background-size: cover; /* This makes the image cover the entire background */
-            background-repeat: no-repeat; /* This prevents the image from repeating */
-            background-position: center; /* This centers the image */
-            filter: blur(8px); /* This applies the blur effect */
-            z-index: -1; /* This places the background behind other content */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: -2;
+            transition: opacity 1s ease;
         }
-        .content {
-            position: relative;
-            z-index: 1; /* Ensures content is above the background */
-            color: white; /* Text color for visibility */
-            text-align: center;
+        .background.bg1 {
+            background-image: url('https://tr.rbxcdn.com/043ecfa62b8acabdd91d969ade59185c/768/432/Image/Webp');
         }
-        .content h1 {
-            -webkit-text-stroke: 0px black; /* Adds a 5px black stroke around the text */
+        .background.bg2 {
+            background-image: url('https://cdn.discordapp.com/attachments/670551631619817493/1262807819409686588/thyjtyjkuy.jpg?ex=6697f0ed&is=66969f6d&hm=3c6baf6d531d6a1de2076e55a9e78506a3b1761527c9383893921f60e0200fa9&');
         }
-        .content p {
+        .fade-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+            z-index: -1;
+        }
+        .section {
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            -webkit-text-stroke: 0px black; /* Adds a 2px black stroke around the text */
-            color: white; /* Ensures the fill color is white */
+            position: relative;
         }
-        .content img {
-            width: 24px; /* Width of the icon */
-            height: 24px; /* Height of the icon */
-            margin-right: 8px; /* Space between the icon and the text */
-            vertical-align: middle; /* Aligns the icon vertically with the text */
-        }
-        .content a {
+        .section-content {
+            text-align: left;
             color: white;
-            text-decoration: none; /* Remove underline from the link */
+            z-index: 1;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .big-text {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white;
+        }
+        .middle-text {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .play-button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .play-button:hover {
+            background-color: #ddd;
+        }
+        .social-links {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
-            align-items: center; /* Aligns the icon and text in the center */
-            margin: 8px 0; /* Adds space between the links */
+            gap: 20px;
+            z-index: 1;
+        }
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+        .social-links img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            vertical-align: middle;
         }
     </style>
 </head>
 <body>
-    <div class="background"></div>
-    <div class="content">
-        <h1>Glitchium</h1>
-        <p>
-            <a href="https://www.youtube.com/@glitchium" target="_blank">
-                <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/youtube-app-white-icon.png" alt="YouTube Icon">
-                Youtube
-            </a>
-        </p>
-        <p>
-            <a href="https://x.com/Glitchium_" target="_blank">
-                <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-white-icon.png" alt="Twitter/X Icon">
-                Twitter/X
-            </a>
-        </p>
-        <p>
-            <a href="https://www.roblox.com/users/2859316136/profile" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Roblox_Logo.svg/2048px-Roblox_Logo.svg.png" alt="Roblox Icon">
-                Roblox
-            </a>
-        </p>
+    <div class="background bg1" id="background1"></div>
+    <div class="background bg2" id="background2" style="opacity: 0;"></div>
+    <div class="fade-overlay"></div>
+
+<div class="section" id="section1">
+    <div class="section-content">
+        <div class="big-text">Teapot Tumble</div>
+        <div class="middle-text">A Game based on the old Roblox game: <br> Classic Dodge The Teapots of Doom!</div>
+        <a href="https://www.roblox.com/games/16601692394/Teapot-Tumble" target="_blank" class="play-button">Play now</a>
     </div>
+</div>
+
+    <div class="section" id="section2">
+        <div class="section-content">
+            <div class="big-text">Glitchium (About me)</div>
+            <div class="middle-text">Glitchium is a Roblox YouTube content creator and developer who loves making games, <br> some finished, some still in the works. At just 15 years old, <br> Glitchium has been into development since a kid, and I'm excited to keep learning and creating!</div>
+            <a href="https://www.roblox.com/users/2859316136/profile" target="_blank" class="play-button">Explore</a>
+        </div>
+    </div>
+
+    <div class="social-links">
+        <a href="https://www.youtube.com/@glitchium" target="_blank">
+            <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/youtube-app-white-icon.png" alt="YouTube Icon">
+            Youtube
+        </a>
+        <a href="https://x.com/Glitchium_" target="_blank">
+            <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-white-icon.png" alt="Twitter/X Icon">
+            Twitter/X
+        </a>
+        <a href="https://www.roblox.com/users/2859316136/profile" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Roblox_Logo.svg/2048px-Roblox_Logo.svg.png" alt="Roblox Icon">
+            Roblox
+        </a>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const background2 = document.getElementById('background2');
+            
+            if (scrollPosition > windowHeight / 2) {
+                background2.style.opacity = 1;
+            } else {
+                background2.style.opacity = 0;
+            }
+        });
+    </script>
 </body>
 </html>
