@@ -83,6 +83,45 @@
         .play-button:hover {
             background-color: #ddd;
         }
+        .top-links {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1;
+        }
+        .top-links button, .top-links a {
+            color: white;
+            background: none;
+            border: none;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: normal;
+            position: relative;
+        }
+        .top-links button::after, .top-links a::after, .social-links a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s;
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+        }
+        .top-links button:hover::after, .top-links a:hover::after, .social-links a:hover::after {
+            width: 100%;
+        }
+        .top-links button {
+            font-weight: bold;
+        }
+        .top-links a {
+            font-weight: normal;
+        }
         .social-links {
             position: fixed;
             bottom: 20px;
@@ -97,9 +136,8 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-        }
-        .social-links a:hover {
-            text-decoration: underline;
+            font-weight: bold;
+            position: relative;
         }
         .social-links img {
             width: 24px;
@@ -114,13 +152,18 @@
     <div class="background bg2" id="background2" style="opacity: 0;"></div>
     <div class="fade-overlay"></div>
 
-<div class="section" id="section1">
-    <div class="section-content">
-        <div class="big-text">Teapot Tumble</div>
-        <div class="middle-text">A Game based on the old Roblox game: <br> Classic Dodge The Teapots of Doom!</div>
-        <a href="https://www.roblox.com/games/16601692394/Teapot-Tumble" target="_blank" class="play-button">Play now</a>
+    <div class="top-links">
+        <button>Home</button>
+        <a href="https://glitchium.github.io/Special-Codes/" target="_blank">Codes</a>
     </div>
-</div>
+
+    <div class="section" id="section1">
+        <div class="section-content">
+            <div class="big-text">Teapot Tumble</div>
+            <div class="middle-text">A Game based on the old Roblox game: <br> Classic Dodge The Teapots of Doom!</div>
+            <a href="https://www.roblox.com/games/16601692394/Teapot-Tumble" target="_blank" class="play-button">Play now</a>
+        </div>
+    </div>
 
     <div class="section" id="section2">
         <div class="section-content">
